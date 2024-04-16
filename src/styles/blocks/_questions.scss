@@ -1,0 +1,151 @@
+.questions {
+  &__content {
+    @include on-tablet {
+      display: grid;
+      grid-template-columns: repeat(8, 1fr);
+      column-gap: 20px;
+    }
+
+    @include on-desktop {
+      grid-template-columns: repeat(12, 1fr);
+      column-gap: 30px;
+    }
+  }
+
+  &__title {
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 40px;
+    text-transform: uppercase;
+    margin-bottom: 27px;
+
+    @include on-tablet {
+      grid-column: 1 / 5;
+      font-size: 36px;
+      line-height: 46px;
+    }
+
+    @include on-desktop {
+      grid-column: 1 / 7;
+      font-size: 56px;
+      line-height: 70px;
+    }
+  }
+
+  &__form {
+    grid-column: 5 / -1;
+
+    @include on-desktop {
+      grid-column: 7 / -1;
+    }
+  }
+
+  &__button {
+    width: 102px;
+    height: 40px;
+    background-color: #39bebf;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s background-color;
+
+    @include on-desktop {
+      width: 124px;
+    }
+
+    &:hover {
+      background-color: $color-green-title;
+    }
+
+    &:focus {
+      background-color: #cfeff0;
+    }
+  }
+
+  &__form-field {
+    display: block;
+    width: 100%;
+    background-color: $color-background;
+    border: 1px solid $color-form-border;
+    font-family: Helvetica, sans-serif;
+    font-size: 14px;
+    line-height: 24px;
+    color: $color-black;
+
+    &--email {
+      height: 48px;
+      margin-bottom: 20px;
+      padding: 12px 20px;
+
+      @include on-tablet {
+        padding: 12px 30px;
+      }
+
+      @include on-desktop {
+        padding: 12px 36px;
+      }
+
+      &:focus {
+        border: 1px solid $color-green-title;
+      }
+    }
+
+    &--textarea {
+      height: 128px;
+      margin-bottom: 30px;
+      resize: none;
+      padding: 12px 20px;
+      font-family: Inter, sans-serif;
+      font-size: 16px;
+
+      @include on-tablet {
+        height: 201px;
+        padding: 12px 30px;
+      }
+
+      @include on-desktop {
+        height: 128px;
+        padding: 16px 36px;
+      }
+    }
+
+    &::placeholder {
+      font-family: Inter, sans-serif;
+      font-size: 16px;
+      line-height: 24px;
+      color: $color-placeholder;
+    }
+
+    &:hover {
+      cursor: pointer;
+    }
+
+    &:focus {
+      outline: none;
+      cursor: auto;
+    }
+
+    &:-webkit-autofill {
+      -webkit-box-shadow: 0 0 0 1000px $color-background inset;
+      -webkit-text-fill-color: $color-black;
+    }
+  }
+
+  ::-webkit-scrollbar {
+    width: 15px;
+  }
+
+  ::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px $color-green-background;
+    border-radius: 15px;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background-color: $color-green-background;
+    border-radius: 15px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background-color: $color-green-link;
+  }
+}

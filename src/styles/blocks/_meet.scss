@@ -1,0 +1,26 @@
+.meet {
+  &__photo {
+    height: 195px;
+    background-image: url(../images/meet/desktop.jpg);
+    background-color: $color-background;
+    background-blend-mode: darken;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin: 0 -18px;
+    transition: 0.3s background-color;
+
+    &:hover {
+      background-color: $color-green-background;
+    }
+
+    @include on-tablet {
+      height: 430px;
+      margin: 0;
+    }
+
+    @include on-desktop {
+      height: 520px;
+    }
+  }
+}

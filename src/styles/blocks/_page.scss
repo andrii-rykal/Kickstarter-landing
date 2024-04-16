@@ -1,0 +1,29 @@
+.page {
+  scroll-behavior: smooth;
+  background-color: $color-background;
+  font-family: Inter, sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  color: $color-black;
+
+  &__body {
+    margin: 0;
+  }
+
+  &__section {
+    margin-bottom: 110px;
+
+    &:nth-of-type(7) {
+      margin-bottom: 89px;
+    }
+
+    @include on-tablet {
+      margin-bottom: 140px;
+    }
+
+    @include on-desktop {
+      margin-bottom: 170px;
+    }
+  }
+}
